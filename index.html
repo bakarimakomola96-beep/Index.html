@@ -1,214 +1,190 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fermicare Cleanser | Afyatouch</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afyatouch | Bidhaa za Afya BF Suma</title>
+<style>
+  /* Reset */
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family: Arial, Helvetica, sans-serif; line-height:1.6; color:#333; background:#f8fafc;}
+  a{text-decoration:none; color:inherit;}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8fafc;
-      color: #333;
-      line-height: 1.6;
-    }
+  /* Header */
+  header{background:#0f766e; color:white; padding:20px 0; text-align:center; position:sticky; top:0; z-index:1000;}
+  nav{margin-top:10px;}
+  nav a{margin:0 15px; font-weight:bold; color:white; transition:0.3s;}
+  nav a:hover{color:#14b8a6;}
+  
+  /* Hero */
+  .hero{background:linear-gradient(135deg,#ecfeff,#bbf7d0); text-align:center; padding:80px 20px;}
+  .hero h1{font-size:2.5rem; margin-bottom:20px; color:#0f766e;}
+  .hero p{font-size:1.2rem; margin-bottom:30px;}
+  .hero img{width:200px; border-radius:15px;}
 
-    header {
-      background: linear-gradient(135deg, #0f766e, #14b8a6);
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
+  /* Sections */
+  section{padding:60px 20px;}
+  .container{max-width:1100px; margin:auto;}
+  h2{color:#0f766e; margin-bottom:20px; font-size:1.8rem; text-align:center;}
 
-    header h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
+  /* About */
+  .about img{float:left; width:250px; margin-right:20px; border-radius:12px;}
+  .about p{overflow:hidden; font-size:1.1rem; margin-top:10px;}
+  
+  /* Benefits */
+  .benefits{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; margin-top:20px;}
+  .benefits .box{background:#f0fdfa; padding:20px; border-radius:12px; border:1px solid #ccfbf1; font-weight:bold; text-align:center; transition:0.3s;}
+  .benefits .box:hover{background:#ccfbf1; cursor:pointer;}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
+  /* Products */
+  .products{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+  .product-box{background:white; padding:20px; border-radius:12px; border:1px solid #ccc; text-align:center; transition:0.3s;}
+  .product-box img{width:100%; border-radius:10px;}
+  .product-box h3{margin:10px 0; color:#0f766e;}
+  .product-box p.price{font-size:1.5rem; color:#dc2626; font-weight:bold; margin:10px 0;}
 
-    .section {
-      background: #fff;
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
+  /* Testimonials */
+  .testimonials{background:#fef3c7; border-radius:12px; padding:20px; margin-bottom:20px;}
+  .testimonial{margin-bottom:15px; font-style:italic;}
 
-    h2 {
-      color: #0f766e;
-    }
+  /* Order Form */
+  form{display:grid; gap:15px; max-width:500px; margin:auto;}
+  input, textarea, button{padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem;}
+  button{background:#0f766e; color:white; border:none; font-weight:bold; cursor:pointer; transition:0.3s;}
+  button:hover{background:#14b8a6;}
 
-    .<img src="images/fermicare.jpg" alt="Fermicare Cleanser" width="300">
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
+  /* Footer */
+  footer{text-align:center; padding:20px; background:#0f766e; color:white; margin-top:30px;}
 
-    .images img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
-
-    .box {
-      background: #f0fdfa;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccfbf1;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .price-box {
-      text-align: center;
-      background: #ecfeff;
-      border: 2px solid #14b8a6;
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .price {
-      font-size: 1.8rem;
-      color: #dc2626;
-      font-weight: bold;
-    }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-      display: grid;
-      gap: 15px;
-    }
-
-    input, textarea, button {
-      padding: 12px;
-      font-size: 1rem;
-      border-radius: 8px;
-    }
-
-    input, textarea {
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background: #0f766e;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 15px 18px;
-      border-radius: 50%;
-      font-size: 22px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-  </style>
+  /* WhatsApp Floating Button */
+  .whatsapp-float{position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px 18px; border-radius:50%; font-size:22px; text-align:center; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.3);}
+</style>
 </head>
-
 <body>
 
+<!-- Header & Menu -->
 <header>
-  <h1>Fermicare Cleanser</h1>
-  <p>Usafi wa ndani ya mwanamke kwa afya, harufu nzuri na kujiamini</p>
+  <h1>Afyatouch</h1>
+  <p>Bidhaa za Afya na Usafi | BF Suma</p>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#products">Products</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#order">Contact/Order</a>
+  </nav>
 </header>
 
-<div class="container">
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <h1>Fermicare Cleanser & Bidhaa Zote za Afya</h1>
+  <p>Usafi wa ndani, nguvu za kiume, kuondoa sumu mwilini, maradhi ya kansa, uvimbe, pressure, na uzazi</p>
+  <img src="https://via.placeholder.com/200x200?text=Fermicare+Cleanser" alt="Fermicare Cleanser">
+</section>
 
-  <div class="section">
-    <h2>Picha za Bidhaa</h2>
-    <div class="images">
-      <img src="https://via.placeholder.com/400x400?text=Fermicare+Cleanser" alt="Fermicare Cleanser">
-      <img src="https://via.placeholder.com/400x400?text=Matumizi+Sahihi" alt="Matumizi">
-    </div>
-    <p><em>📌 Utaweza kubadilisha picha hizi baadaye kwa picha halisi za bidhaa.</em></p>
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <h2>Kuhusu Afyatouch & BF Suma</h2>
+    <img src="https://via.placeholder.com/250x250?text=About+Afyatouch" alt="About Afyatouch">
+    <p>Afyatouch ni kampuni inayotoa bidhaa mbalimbali za afya za BF Suma: Fermicare Cleanser, bidhaa za nguvu za kiume, kuondoa sumu mwilini, kusaidia pressure, maradhi ya kansa, uzazi na kadhalika. Bidhaa zetu ni salama, zenye ubora wa juu na zimejaribiwa na wateja wetu.</p>
   </div>
+</section>
 
-  <div class="section">
-    <h2>Fermicare Cleanser ni nini?</h2>
-    <p>
-      Fermicare Cleanser ni sabuni maalum ya usafi wa sehemu za siri za mwanamke,
-      iliyoundwa na <strong>BF Suma</strong>.
-      Inasaidia kulinda pH ya asili, kuondoa harufu mbaya na kuzuia maambukizi.
-    </p>
-  </div>
-
-  <div class="section">
+<!-- Benefits Section -->
+<section id="benefits">
+  <div class="container">
     <h2>Faida Kuu</h2>
     <div class="benefits">
-      <div class="box">Hudumisha pH ya asili</div>
-      <div class="box">Huondoa harufu mbaya</div>
-      <div class="box">Salama kwa matumizi ya kila siku</div>
-      <div class="box">Huongeza kujiamini</div>
+      <div class="box">Hudumisha afya ya ndani ya mwili</div>
+      <div class="box">Kuondoa sumu mwilini</div>
+      <div class="box">Kusaidia uzazi</div>
+      <div class="box">Kuongeza nguvu za kiume</div>
+      <div class="box">Kupunguza pressure na uvimbe</div>
+      <div class="box">Bidhaa salama na zilizojaribiwa</div>
     </div>
   </div>
+</section>
 
-  <div class="section price-box">
-    <h2>Bei Maalum</h2>
-    <p class="price">TSh 35,000</p>
-    <p>🚚 Delivery ndani ya mkoa wako</p>
+<!-- Products Section -->
+<section id="products">
+  <div class="container">
+    <h2>Bidhaa Zetu</h2>
+    <div class="products">
+      <div class="product-box">
+        <img src="https://via.placeholder.com/250x250?text=Fermicare+Cleanser" alt="Fermicare Cleanser">
+        <h3>Fermicare Cleanser</h3>
+        <p class="price">TSh 35,000</p>
+      </div>
+      <div class="product-box">
+        <img src="https://via.placeholder.com/250x250?text=Male+Power" alt="Male Power">
+        <h3>Male Power</h3>
+        <p class="price">TSh 55,000</p>
+      </div>
+      <div class="product-box">
+        <img src="https://via.placeholder.com/250x250?text=Detox+Body" alt="Detox Body">
+        <h3>Detox Body</h3>
+        <p class="price">TSh 45,000</p>
+      </div>
+      <div class="product-box">
+        <img src="https://via.placeholder.com/250x250?text=Pressure+Support" alt="Pressure Support">
+        <h3>Pressure Support</h3>
+        <p class="price">TSh 50,000</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="section">
-    <h2>Weka Oda Sasa</h2>
-    <p>Baada ya kutuma oda, utapelekwa WhatsApp kuwasiliana nasi moja kwa moja.</p>
+<!-- Testimonials Section -->
+<section id="testimonials">
+  <div class="container">
+    <h2>Ushuhuda / Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial"><strong>Amina:</strong> "Baada ya kutumia Fermicare Cleanser, harufu mbaya iliondoka kabisa!"</div>
+      <div class="testimonial"><strong>Juma:</strong> "Male Power imenisaidia sana, nguvu yangu imeongezeka!"</div>
+      <div class="testimonial"><strong>Fatma:</strong> "Detox Body imenisaidia kuondoa sumu mwilini na kuanza kujisikia vizuri."</div>
+    </div>
+  </div>
+</section>
 
-    <form onsubmit="sendToWhatsApp(); return false;">
+<!-- Order / Contact Section -->
+<section id="order">
+  <div class="container">
+    <h2>Weka Oda / Contact</h2>
+    <p>Tuma oda yako moja kwa moja kupitia WhatsApp:</p>
+    <form onsubmit="sendWhatsApp(); return false;">
       <input type="text" id="name" placeholder="Jina Kamili" required>
       <input type="tel" id="phone" placeholder="Namba ya Simu" required>
-      <textarea id="address" rows="3" placeholder="Anuani (Mtaa / Mkoa)" required></textarea>
+      <textarea id="address" rows="3" placeholder="Anuani kamili" required></textarea>
       <button type="submit">Place Order</button>
     </form>
   </div>
+</section>
 
-</div>
-
+<!-- Footer -->
 <footer>
-  © 2026 Afyatouch | Fermicare Cleanser by BF Suma
+  © 2026 Afyatouch | Bidhaa za BF Suma | All Rights Reserved
 </footer>
 
 <!-- WhatsApp Floating Button -->
 <a class="whatsapp-float" href="https://wa.me/255695154001" target="_blank">🟢</a>
 
+<!-- WhatsApp Script -->
 <script>
-function sendToWhatsApp() {
+function sendWhatsApp() {
   var name = document.getElementById("name").value;
   var phone = document.getElementById("phone").value;
   var address = document.getElementById("address").value;
-
+  
   var message =
-    "ODA YA FERMICARE CLEANSER%0A%0A" +
+    "ODA YA AFYATOUCH BF SUMA%0A%0A" +
     "Jina: " + name + "%0A" +
     "Simu: " + phone + "%0A" +
     "Anuani: " + address + "%0A%0A" +
     "Imetumwa kupitia Afyatouch Website";
-
-  var whatsappNumber = "255695154001";
+  
+  var whatsappNumber = "255695154001"; 
   var url = "https://wa.me/" + whatsappNumber + "?text=" + message;
   window.open(url, "_blank");
 }
